@@ -1,6 +1,7 @@
 var fs = require('fs');
 var parse = require('csv-parse');
 var theFileToRead = 'dc-parking-data-node/simple_data/parking_feb_2016.csv';
+var count = {};
 
 
 fs.readFile(theFileToRead, function processFile(err, data){
@@ -17,19 +18,22 @@ fs.readFile(theFileToRead, function processFile(err, data){
       return;
     }
     else {
-      data.forEach(function violations(citation){
-        var violationCount = citation[9];
-        console.log(violationCount);
+      console.log("Level 1 Answer 1: ", (data.length)-1);
+
+      var result = data.map(function violations(citation){
+        return citation[9];
+
+      });
+      result.shift();
+      result.forEach(function count(citationType) {
+        if(count[citationType] === undefined) {
+            count[citationType] = 1;
+        } else {
+          count[citationType]++;
+        }
+        console.log(count);
       });
     }
   });
-  // violationCount.shift();
-  // console.log(typeof(violationCount));
+
 });
-
-
-
-
-// data = parse(data, [delimiter]);
-
-// var violationList = parse()
