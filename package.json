@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/jmdembe/dc-parking-data/issues"
   },
-  "homepage": "https://github.com/jmdembe/dc-parking-data#readme"
+  "homepage": "https://github.com/jmdembe/dc-parking-data#readme",
+  "dependencies": {
+    "csv-parse": "^1.1.7"
+  }
 }
