@@ -7,6 +7,8 @@ var parsedData = fs.readFile(theFileToRead, function processFile(err, data) {
   var stringifiedData = data.toString('utf-8');
   parse(stringifiedData, function parseData(x,y) {
     console.log(y);
+    console.log((y.length)-1);
+
   });
 });
 
