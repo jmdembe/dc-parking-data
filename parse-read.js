@@ -3,6 +3,9 @@ var parse = require('csv-parse');
 var theFileToRead = 'dc-parking-data-node/simple_data/parking_feb_2016.csv';
 var violationType = {};
 
+module.require = {
+    processFile: processFile
+};
 
 fs.readFile(theFileToRead, function processFile(err, data){
   if(err) {
